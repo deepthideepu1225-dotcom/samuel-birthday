@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>For You 💖</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      background: #ffe6f0;
+      padding: 50px;
+    }
+    .box {
+      display: none;
+    }
+    .active {
+      display: block;
+    }
+    button {
+      padding: 10px 20px;
+      margin-top: 20px;
+      background: pink;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    input {
+      padding: 10px;
+      border-radius: 10px;
+      border: none;
+    }
+  </style>
+</head>
+
+<body>
+
+<div id="page1" class="active">
+  <h2>Enter Passcode 💖</h2>
+  <input type="password" id="pass">
+  <br>
+  <button onclick="checkPass()">Unlock</button>
+</div>
+
+<div id="page2" class="box">
+  <h2>Heyy Bujji 💖</h2>
+  <p>Nuvvu correct passcode enter chesav 😏</p>
+  <button onclick="next(3)">Open Your Gift 🎁</button>
+</div>
+
+<div id="page3" class="box">
+  <h2>🎁 Gift</h2>
+  <p>Idi naa heart nunchi vachindhi 💖</p>
+  <button onclick="next(4)">Next ➡️</button>
+</div>
+
+<div id="page4" class="box">
+  <h2>💌 Message</h2>
+  <p>Happy Birthday bujjiii 🎂💖</p>
+  <button onclick="next(5)">Next 💕</button>
+</div>
+
+<div id="page5" class="box">
+  <h2>❤️</h2>
+  <p>I love you bangaram 💖</p>
+  <button onclick="next(6)">Final 🎉</button>
+</div>
+
+<div id="page6" class="box">
+  <h2>🎉 Final Surprise</h2>
+  <p>Always be happy bujjiii 😏❤️</p>
+</div>
+
+<script>
+function checkPass() {
+  var p = document.getElementById("pass").value;
+  if(p === "2307") {
+    show(2);
+  } else {
+    alert("Wrong passcode 😝");
+  }
+}
+
+function next(n) {
+  show(n);
+}
+
+function show(n) {
+  let pages = document.querySelectorAll("div");
+  pages.forEach(p => p.classList.remove("active"));
+  document.getElementById("page"+n).classList.add("active");
+}
+</script>
+
+</body>
+</html>
